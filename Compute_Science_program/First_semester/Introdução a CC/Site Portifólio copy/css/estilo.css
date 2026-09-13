@@ -1,0 +1,552 @@
+/* =========================================
+   NOVO LAYOUT INSPIRADO NA IMAGEM
+   ========================================= */
+
+/* Fundo escuro total para a página */
+body {
+    background-color: #050505; /* Quase preto absoluto */
+}
+
+/* 1. Header Minimalista */
+.header-minimalista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent; /* Remove aquele fundo cinza/borrado */
+    position: absolute; /* Fica no topo sem acompanhar a rolagem */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border: none;
+    box-shadow: none;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mini-foto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #333;
+}
+
+.logo-texto {
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nav-minimalista a {
+    color: #a0a0a0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-minimalista a:hover {
+    color: #ffffff;
+    text-shadow: none; /* Remove o brilho antigo para ficar clean */
+}
+
+/* Botão "Get in touch" idêntico ao da imagem */
+.nav-minimalista .btn-destaque {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: background 0.3s;
+}
+
+.nav-minimalista .btn-destaque:hover {
+    background-color: #333;
+}
+
+/* 2. Secção Home (Com Imagem de Fundo) */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* MÁGICA DA IMAGEM DE FUNDO AQUI */
+    background-color: #000000; /* Cor de segurança caso a imagem demore a carregar */
+    background-image: url('../img/home.png'); /* Confirma se o caminho e o nome estão corretos */
+    background-size: cover; /* Faz com que a imagem cubra todo o ecrã */
+    background-position: center center; /* Centra a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    
+    /* Adicionamos uma ligeira sombra escura por cima para garantir que o texto branco fica legível */
+    box-shadow: inset 0 0 0 2000px rgba(5, 5, 5, 0.4); 
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Tipografia gigante */
+.hero-titulo {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero-subtitulo {
+    font-size: 1.2rem;
+    color: #888888;
+    margin-bottom: 40px;
+}
+
+.hero-icone {
+    font-size: 3rem;
+    color: #555;
+    margin-bottom: 30px;
+    opacity: 0.5;
+}
+
+/* 3. Pílula de Redes Sociais */
+.social-pill {
+    background-color: #1c1c1e;
+    padding: 12px 30px;
+    border-radius: 40px; /* Formato bem arredondado */
+    display: inline-flex;
+    gap: 25px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.social-pill a {
+    color: #888888;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-pill a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+sobre-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px; /* Espaço para não bater no header */
+    
+    /* Fundo de Grelha (Grid) */
+    background-color: #050505;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+}
+
+/* O cartão que segura as duas colunas */
+.sobre-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Esquerda ocupa 1 parte, Direita ocupa 2 partes */
+    gap: 50px;
+    max-width: 900px;
+    width: 100%;
+    
+    /* Efeito de vidro escuro para o texto não se misturar com a grelha */
+    background-color: rgba(10, 10, 12, 0.7); 
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid #222;
+    backdrop-filter: blur(10px);
+}
+
+/* --- Lado Esquerdo --- */
+.sobre-esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: 1px solid #333; /* Linha a separar as colunas */
+    padding-right: 40px;
+}
+
+.foto-perfil-sobre {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    filter: grayscale(20%); /* Tira um pouco da cor para combinar com o tom dark */
+}
+
+.sobre-nome {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.sobre-formacao p {
+    color: #888888;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.formacao-titulo {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem !important;
+    letter-spacing: 1px;
+    margin-bottom: 10px !important;
+}
+
+.status-andamento {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Lado Direito --- */
+.sobre-direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.sobre-titulo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.sobre-texto {
+    color: #999999;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.sobre-subtitulo {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-lista {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões caiam para a linha de baixo se não houver espaço */
+    gap: 10px;
+}
+
+.skill-pill {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-pill:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --- Responsividade (Telemóveis) --- */
+@media (max-width: 768px) {
+    .sobre-container {
+        grid-template-columns: 1fr; /* Muda para 1 coluna no telemóvel */
+        padding: 30px;
+    }
+    
+    .sobre-esquerda {
+        border-right: none;
+        border-bottom: 1px solid #333; /* Linha passa para baixo */
+        padding-right: 0;
+        padding-bottom: 30px;
+        align-items: center; /* Centra as coisas no telemóvel */
+        text-align: center;
+    }
+    
+    .sobre-direita {
+        padding-top: 30px;
+        text-align: center;
+    }
+    
+    .skills-lista {
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   SECÇÃO: PROJETOS
+   ========================================= */
+
+.projetos-section {
+    padding: 100px 20px;
+    background-color: #000000; /* Preto absoluto para dar contraste com a grelha de cima */
+    text-align: center;
+}
+
+.secao-titulo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.projetos-grid {
+    display: grid;
+    /* Faz a grelha ser automática: cria colunas consoante o espaço do ecrã */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projeto-card-novo {
+    background-color: rgba(15, 15, 18, 0.8);
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card-novo:hover {
+    transform: translateY(-5px); /* Efeito de flutuar ao passar o rato */
+    border-color: #555;
+}
+
+.projeto-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.projeto-header h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.projeto-header i {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.projeto-desc {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Empurra os botões para o fundo do cartão */
+}
+
+.tech-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tech-pills span {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   SECÇÃO: CONTATO
+   ========================================= */
+
+.contato-section {
+    padding: 100px 20px;
+    /* Fundo com grelha novamente para fechar o site com a mesma identidade visual */
+    background-color: #050505;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contato-container {
+    max-width: 600px;
+    width: 100%;
+    background-color: rgba(10, 10, 12, 0.8);
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid #222;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.contato-subtitulo {
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.form-minimalista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-minimalista input,
+.form-minimalista textarea {
+    background-color: #0a0a0f;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    box-sizing: border-box; /* Garante que os campos não transbordam */
+}
+
+/* Remove o contorno padrão azul do navegador e coloca uma borda mais clara */
+.form-minimalista input:focus,
+.form-minimalista textarea:focus {
+    outline: none;
+    border-color: #666;
+    background-color: #0f0f14;
+}
+
+/* Botão de Enviar ao estilo invertido (Branco) */
+.btn-enviar {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.msg-resultado {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.projeto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+/* Estilo do link do GitHub dentro do projeto */
+.link-github-projeto {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background-color: #1a1a24;
+    border-radius: 6px;
+    border: 1px solid #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.link-github-projeto:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Oculta os projetos extras por padrão */
+.projeto-extra {
+    display: none;
+}
+
+/* Quando a classe "mostrar" for adicionada pelo JS, eles aparecem com uma animação */
+.projeto-extra.mostrar {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão "Veja Mais" */
+#btn-ver-mais {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#btn-ver-mais:hover {
+    background-color: #222;
+    border-color: #fff;
+}
